@@ -30,6 +30,10 @@ class ViewController: UIViewController {
         roundLabel.text = String(round)
     }
     
+    func updateScore(_ points: Int) {
+        score += points
+    }
+    
     func startNewRound() {
         round += 1
         targetValue = 1 + Int(arc4random_uniform(100))
@@ -45,23 +49,38 @@ class ViewController: UIViewController {
 
     @IBAction func showAlert() {
         let difference = abs(targetValue - currentValue)
-        let points = 100 - difference
-        score += points
-        let title: String
-        if difference == 0 {
-            title = "Perfect!"
-        } else if difference < 5 {
-            title = "You almost had it!"
-        } else if difference < 10 {
-            title = "Pretty good!"
-        } else{
-            title = "Not even close..."
-        }
+        let points = 100 - difference + applyBonus(difference)
+        let title: String = getTitle(difference)
+        updateScore(points)
+        
         let message = "You scored \(points) points"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion:nil)
         startNewRound()
+    }
+    
+    func getTitle(_ difference: Int) -> String {
+        if difference == 0 {
+            return "Perfect!"
+        } else if difference < 5 {
+            return "You almost had it!"
+        } else if difference < 10 {
+            return "Pretty good!"
+        } else{
+            return "Not even close..."
+        }
+    }
+    
+    func applyBonus(_ difference: Int) -> Int {
+        switch difference {
+        case 0:
+            return 100
+        case 1:
+            return 50
+        default:
+            return 0
+        }
     }
 }
