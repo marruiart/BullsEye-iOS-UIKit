@@ -24,6 +24,12 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
+    @IBAction func startNewGame() {
+        score = 0
+        round = 0
+        startNewRound()
+    }
+    
     func updateLabels(){
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
@@ -55,10 +61,12 @@ class ViewController: UIViewController {
         
         let message = "You scored \(points) points"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: {
+            action in
+            self.startNewRound()
+        })
         alert.addAction(action)
         present(alert, animated: true, completion:nil)
-        startNewRound()
     }
     
     func getTitle(_ difference: Int) -> String {
