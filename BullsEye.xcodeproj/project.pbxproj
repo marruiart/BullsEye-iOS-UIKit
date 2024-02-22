@@ -14,6 +14,7 @@
 		9C9F7B7A2B85F985006BE59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F7B792B85F985006BE59B /* Assets.xcassets */; };
 		9C9F7B7D2B85F985006BE59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F7B7B2B85F985006BE59B /* LaunchScreen.storyboard */; };
 		9CBF33C82B87445500229F69 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBF33C72B87445500229F69 /* AboutViewController.swift */; };
+		9CBF33CA2B87495E00229F69 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBF33C92B87495E00229F69 /* AboutMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9C9F7B7C2B85F985006BE59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C9F7B7E2B85F985006BE59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CBF33C72B87445500229F69 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9CBF33C92B87495E00229F69 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				9C9F7B722B85F984006BE59B /* SceneDelegate.swift */,
 				9C9F7B742B85F984006BE59B /* ViewController.swift */,
 				9CBF33C72B87445500229F69 /* AboutViewController.swift */,
+				9CBF33C92B87495E00229F69 /* AboutMeViewController.swift */,
 				9C9F7B762B85F984006BE59B /* Main.storyboard */,
 				9C9F7B792B85F985006BE59B /* Assets.xcassets */,
 				9C9F7B7B2B85F985006BE59B /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9F7B752B85F984006BE59B /* ViewController.swift in Sources */,
+				9CBF33CA2B87495E00229F69 /* AboutMeViewController.swift in Sources */,
 				9C9F7B712B85F984006BE59B /* AppDelegate.swift in Sources */,
 				9CBF33C82B87445500229F69 /* AboutViewController.swift in Sources */,
 				9C9F7B732B85F984006BE59B /* SceneDelegate.swift in Sources */,
