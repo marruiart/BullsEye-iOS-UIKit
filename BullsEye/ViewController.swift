@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
         startNewRound()
+        setSliderThumbImage()
+        setSliderInsets()
     }
     
     @IBAction func startNewGame() {
@@ -29,6 +31,28 @@ class ViewController: UIViewController {
         round = 0
         startNewRound()
     }
+    
+    func setSliderThumbImage() {
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal") // UIImage(named: "ThumbImage-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlighted = #imageLiteral(resourceName: "SliderThumb-Highlighted") // UIImage(named: "ThumbImage-Highlighted")
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+    }
+    
+    func setSliderInsets(){
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        //let trackLeftImage =
+        let trackLeftImage =  #imageLiteral(resourceName: "SliderTrackLeft") // UIImage(named: "SliderTrackLeft")
+        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        
+        let trackRightImage = #imageLiteral(resourceName: "SliderTrackRight") // UIImage(named: "SliderTrackRight")
+        let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
+    }
+    
     
     func updateLabels(){
         targetLabel.text = String(targetValue)
